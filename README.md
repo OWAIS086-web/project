@@ -1,4 +1,4 @@
-# billowing_moon_36542
+# website django
 
 This is a repository for a web application developed with Django, built with [Crowdbotics](https://crowdbotics.com)
 
