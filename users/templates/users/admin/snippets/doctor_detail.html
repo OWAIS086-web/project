@@ -1,0 +1,139 @@
+<div class="section" style="max-width: 800px">
+    <div class="header">
+        <h3>{{ user.get_user_type_display }}</h3>
+    </div>
+
+    <table style="width: 100%; max-width: 800px">
+        <tr>
+            <th>Date of Creation</th>
+            <td>
+                <div class="field-data">{{ user.date_joined }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>
+                <div class="field-data">{{ user.first_name }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Last Nme</th>
+            <td>
+                <div class="field-data">{{ user.last_name }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Practice Name</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.practice_name }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Role</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.role }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Speciality</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.get_speciality_display }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Date of Birth</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.date_of_birth }}</div>
+            </td>
+        </tr>
+    </table>
+    <div class="header">
+        <h3>Contact Information</h3>
+    </div>
+    <table style="width: 100%; max-width: 800px">
+        <tr>
+            <th>Phone Number</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.phone_number }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>
+                <div class="field-data">{{ user.email }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.country }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>State/Province</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.state }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.city }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Primary Practice Address</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.primary_practice_address }}</div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>ZIP Code</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.zip_code }}</div>
+            </td>
+        </tr>
+    </table>
+    <div class="header">
+        <h3>License Information</h3>
+    </div>
+    <table style="width: 100%; max-width: 800px">
+        <tr>
+            <th>Dental License Number</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.dental_license_number }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>License State/Province</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.license_state }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Graduation Year</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.graduation_year }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Degree</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.degree }}</div>
+            </td>
+        </tr>
+        <tr>
+            <th>NPI Number</th>
+            <td>
+                <div class="field-data">{{ user.doctor_profile.npi_number }}</div>
+            </td>
+        </tr>
+    </table>
+    <div class="submit-row" style="margin-top: 20px">
+
+        <a class="button default" style="padding: 10px 15px"
+        href="{% url 'admin:doctors_doctorprofile_change' user.doctor_profile.id %}">Edit Profile</a>
+
+    </div>
+</div>

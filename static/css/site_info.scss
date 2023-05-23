@@ -1,0 +1,75 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(203.1deg, #87BDCF 0%, #3A94B0 64.95%);
+  height: 100%;
+  min-height: 100vh;
+}
+
+#content {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  //background-color: #000;
+  background: linear-gradient(203.1deg, #87BDCF 0%, #3A94B0 64.95%);
+
+}
+@keyframes animation_arrow_left_right {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: 5px;
+  }
+  0% {
+    margin-left: 0;
+  }
+}
+.card-page {
+  background: linear-gradient(203.1deg, #266c83 0%, #0d556a 64.95%);
+  box-shadow: 0 0 12px -6px #fff;
+  border-radius: 15px;
+  border: none !important;
+  color: #fff;
+  width: 100%;
+
+  .card-body {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .content-header {
+    padding: 20px 20px;
+    h1 {
+      font-size: 24px;
+    }
+    .another-page  {
+      a {
+        font-size: 12px;
+        &:hover {
+          text-decoration: none;
+        }
+        .arrow{
+          animation-duration: 1s;
+          //animation-direction: reverse;
+          animation-name: animation_arrow_left_right;
+          animation-iteration-count: infinite;
+          animation-delay: 1s;
+          animation-direction: alternate;
+        }
+      }
+    }
+  }
+
+  .card-content {
+    font-size: 14px;
+    width: 100%;
+
+  }
+
+}
+.copyright-footer {
+  font-size: 12px;
+}

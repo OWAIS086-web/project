@@ -1,0 +1,29 @@
+{% extends 'base_bs4.html' %}
+{% load static %}
+
+{#{% block head_title %}Privacy Policy | PDG Innovations{% endblock %}#}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/site_info.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container-fluid d-flex flex-column justify-content-center align-content-center">
+        <div class="card card-page mx-auto my-5" style="max-width: 800px">
+            <div class="card-body">
+                <div class="content-header text-center mb-3">
+                    <h1 class="my-0">{{ page.title }}</h1>
+                    <div class="another-page">
+                        <a href="{% url 'home:page_terms_and_condition' %}"
+                           class="text-white"><span class="arrow mr-1">&larr;</span>Terms & Conditions</a>
+                    </div>
+                </div>
+                <div class="card-content text-justify px-3 px-sm-4 px-md-5 px-lg-5">
+                    {{ page.description|safe }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright-footer w-100 py-3 text-center">
+        <p class="my-0 text-center text-white">&copy; 2023 PDG Innovations, All Rights Reserved </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+.section .header {
+    background-color: #83ACC5;
+    padding: 10px 10px;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+}
+
+.section .header h1, .section .header h2, .section .header h3, .section .header h4{
+    color: #fff;
+    margin: 0;
+}

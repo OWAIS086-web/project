@@ -1,0 +1,31 @@
+.btn-admin {
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    border-radius: 4px;
+}
+
+.btn-admin-primary {
+    background-color: #4D758D;
+    color: #fff !important;
+    padding: 5px 10px;
+}
+
+.btn-admin-danger {
+    background-color: #EB5757;
+    color: #fff !important;
+    padding: 5px 10px;
+}
+
+
+.button-actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-actions a {
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.32px;
+    /*line-height: 21px;*/
+}

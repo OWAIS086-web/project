@@ -1,0 +1,19 @@
+{% extends "admin/custom_base.html" %}
+{% block content %}
+    <style>
+        .section table th {
+            width: 250px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .section table .field-data {
+            padding: 7px 10px;
+            box-shadow: 0 0 2px 0 #000;
+            border-radius: 5px;
+        }
+    </style>
+    {% if user.user_type == 'doctor' %}
+        {% include 'users/admin/snippets/doctor_detail.html' %}
+    {% endif %}
+{% endblock %}

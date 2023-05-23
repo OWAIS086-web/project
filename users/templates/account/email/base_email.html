@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title></title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h1, p {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+{% block content %}{% endblock %}
+<p>Download our app:</p>
+{% if app_link_android %}
+    <p>
+        <a href="{{ app_link_android }}"
+           style="text-decoration: none; color: #0d6c88"><b>Google Play Store</b></a>
+    </p>
+{% endif %}
+{% if app_link_ios %}
+    <p>
+        <a href="{{ app_link_ios }}"
+           style="text-decoration: none; color: #0d6c88"><b>Apple App Store</b></a>
+    </p>
+{% endif %}
+<table cellpadding="10" border="0" cellspacing="0" style="border: 0; border-collapse: collapse;">
+    <tr>
+        {% if app_link_android %}
+            <td>
+                <a href="{{ app_link_android }}" style="text-decoration: none;">
+                {% if app_store_links and app_store_links.google_play_store_logo %}
+                         <img src="{{ app_store_links.google_play_store_logo.url }}"
+                             style="width: auto; height: 100%; max-height: 70px;">
+                    {% elif gs_bucket_name %}
+                        <img src="{% static 'img/badges/google-play-badge.png' %}"
+                                 style="width: auto; height: 100%; max-height: 70px;">
+                    {% elif request.get_host %}
+                        <img src="{{ http_protocol }}{{ request.get_host }}{% static 'img/badges/google-play-badge.png' %}"
+                             style="width: auto; height:100%; max-height: 70px;">
+                    {% elif current_site %}
+                        <img src="https://{{ current_site.domain }}{% static 'img/badges/google-play-badge.png' %}"
+                             style="width: auto; height:100%; max-height: 70px;">
+                    {% endif %}
+                </a>
+            </td>
+        {% endif %}
+        {% if app_link_ios %}
+            <td>
+                <a href="{{ app_link_ios }}" style="text-decoration: none;">
+                {% if app_store_links and app_store_links.apple_store_logo %}
+                         <img src="{{ app_store_links.apple_store_logo.url }}"
+                             style="width: auto; height: 100%; max-height: 70px;">
+                    {% elif gs_bucket_name %}
+                        <img src="{% static 'img/badges/apple-store-badge.png' %}"
+                             style="width: auto; height: 100%; max-height: 70px;">
+                    {% elif request.get_host %}
+                        <img src="{{ http_protocol }}{{ request.get_host }}{% static 'img/badges/apple-store-badge.png' %}"
+                             style="width: auto; height: 100%; max-height: 70px;">
+                    {% elif current_site %}
+                        <img src="https://{{ current_site.domain }}{% static 'img/badges/apple-store-badge.png' %}"
+                             style="width: auto; height: 100%; max-height: 70px;">
+                    {% endif %}
+                </a>
+            </td>
+        {% endif %}
+    </tr>
+</table>
+<p style="line-height: 30px">Thank you,<br>
+    <b>PDG Innovations</b>
+</p>
+</body>
+</html>
